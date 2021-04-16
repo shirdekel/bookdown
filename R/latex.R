@@ -240,9 +240,7 @@ restore_block2 = function(x, global = TRUE) {
     theorem_defs = sprintf(
       '%s\\newtheorem{%s}{%s}%s', theorem_style(names(theorem_abbr)),
       names(theorem_abbr), str_trim(theorem_label),
-      if (global) '' else {
-        if (length(grep('^\\\\chapter[*]?', x))) '[chapter]' else '[section]'
-      }
+      ''
     )
     # the proof environment has already been defined by amsthm
     proof_envs = setdiff(names(label_names_math2), 'proof')
